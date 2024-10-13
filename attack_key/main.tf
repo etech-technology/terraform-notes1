@@ -4,7 +4,7 @@ resource "aws_instance" "web" {
   key_name                    = var.key_name
   associate_public_ip_address = true
   vpc_security_group_ids      = [aws_default_security_group.default.id]
-  count = 5
+  count                       = 5
 
   tags = {
     Name = "first_tf_server-${count.index}"
